@@ -1,6 +1,8 @@
+/*T O(n);M O(1)
+  Algo: go through string if we find ' ' reverse word;
+*/
 class Solution {
 public:
-    
     void reverseString(string &s,int i, int j){
         for(int k=i; k<(j+i)/2; k++){
             char c=s[k];
