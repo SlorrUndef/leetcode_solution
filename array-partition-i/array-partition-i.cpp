@@ -8,7 +8,7 @@ public:
         sort(nums.begin(), nums.end());
         int res = 0;
         for(int i = nums.size()-1; i>0; i-=2){
-            res += min(nums[i], nums[i-1]);
+            res += nums[i-1];
         }
         return res;
     }
