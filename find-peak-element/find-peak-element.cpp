@@ -1,7 +1,10 @@
+/*O(logn)
+  Algo: left-binary search
+*/
 class Solution {
 public:
     int findPeakElement(const vector<int> &nums) {
-        int left = 0, right = nums.size()-1;
+        int left = 0, right = nums.size() - 1;
         
         while(left < right){
             int mid = left + (right-left)/2;
