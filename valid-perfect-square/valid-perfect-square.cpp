@@ -1,6 +1,6 @@
+/*Algo: left-binary search*/
 class Solution {
 public:
-    
     bool isPerfectSquare(int num) {
         if(num == 1) return true;
         int mid, left = 0, right = num;
