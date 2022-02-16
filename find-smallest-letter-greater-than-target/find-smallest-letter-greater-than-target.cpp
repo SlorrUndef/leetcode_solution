@@ -2,7 +2,7 @@ class Solution {
 public:
     char nextGreatestLetter(vector<char>& letters, char target) {
         int left = 0, right = letters.size();
-        if (letters.back() <= target) return letters.front();
+        if (letters[right-1] <= target) return letters[left];
         while (left < right){
             int mid = left + (right-left)/2;
             if(letters[mid] <= target){
@@ -11,6 +11,6 @@ public:
                 right = mid;
             }
         }
-        return (letters[left]);
+        return letters[left];
     }
 };
