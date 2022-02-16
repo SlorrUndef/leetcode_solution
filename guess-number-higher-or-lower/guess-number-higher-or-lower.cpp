@@ -6,7 +6,9 @@
  *               otherwise return 0
  * int guess(int num);
  */
-
+/*TIME : O(logn)
+  Algo: binary search
+*/
 class Solution {
 public:
     int guessNumber(int n) {
