@@ -11,6 +11,6 @@ public:
                 right = mid;
             }
         }
-        return (left == letters.size() ? letters[left-1] : letters[left]);
+        return (letters[left]);
     }
 };
