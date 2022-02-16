@@ -1,6 +1,6 @@
 /*TIME: O(logn)
-  Algo: you have 2 sorted parts in array left part and right part;
-  check in which part lies element (nums[mid]) and apply binary search
+  Algo: With scrutiny on a rotated sorted array, it's not hard to find that for every index i, either the part [0, i] is sorted or the part [i, n - 1] is sorted.
+The idea is that we can always divide the array into two parts L, R. If L is sorted and the key is in the range we can simply throw R away, if key is not in the range then we know the key must be in the unsorted part(i.e. R). If key is in R, we are back to the same problem with the size halved, so we can apply the same idea on R.
 */
 class Solution {
 public:
