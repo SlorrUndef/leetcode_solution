@@ -1,5 +1,5 @@
 /*TIME:O(logn)
-  Algo: binary search elements such that a*a == x
+  Algo: left-binary search elements such that a*a == x
   if we didn't found check if left*left > x return left-1 else return left
 */
 class Solution {
