@@ -28,9 +28,9 @@ public:
         if(x == 0) return 0;
         if(x < 4) return 1;
         int mid, left = 0, right = x;
-        while(left <= right){
+        while(left < right){
             mid = left + (right-left)/2;
-            if(mid == x/mid){
+            if(mid == x/mid){       
                 return mid;
             } else if(mid < x/mid){
                 left = mid+1;
@@ -38,6 +38,6 @@ public:
                 right = mid-1;
             }
         }
-        return right;
+        return (left*left > x ? left-1 : left);
     }
 };
