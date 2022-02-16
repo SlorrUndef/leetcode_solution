@@ -1,6 +1,8 @@
 // The API isBadVersion is defined for you.
 // bool isBadVersion(int version);
-
+/*TIME: O(logn)
+  Algo: left-binary search
+*/
 class Solution {
 public:
     int firstBadVersion(int n) {
