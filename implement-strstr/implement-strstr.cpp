@@ -1,3 +1,6 @@
+/*TIME: O(n*m); MEMORY: O(1)
+  Algo: traverse all the possible starting points of haystack (from 0 to haystack.length() - needle.length()) and see if the following characters in haystack match those of needle.
+*/
 class Solution {
 public:
     int strStr(string haystack, string needle) {
