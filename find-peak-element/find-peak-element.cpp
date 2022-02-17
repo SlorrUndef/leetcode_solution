@@ -5,12 +5,11 @@ class Solution {
 public:
     int findPeakElement(const vector<int> &nums) {
         int left = 0, right = nums.size() - 1;
-        
-        while(left < right){
+        while(left + 1 < right){
             int mid = left + (right-left)/2;
-            if(nums[mid] < nums[mid+1]) left = mid+1;
+            if(nums[mid] < nums[mid+1]) left = mid;
             else right = mid;
         }
-        return left;
+        return nums[left] > nums[right] ? left : right;
     }
 };
