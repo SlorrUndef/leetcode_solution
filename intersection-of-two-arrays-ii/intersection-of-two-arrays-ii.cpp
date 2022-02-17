@@ -1,4 +1,6 @@
-class Solution {// Two pointer ( i , j ) with sort
+/*TIME: O(max(nlogn,mlogm)); MEMORY: O(n+m)
+  Algo: Sort two vectors and two pointers*/
+class Solution {
 public:
     vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
         sort(nums1.begin(), nums1.end());
