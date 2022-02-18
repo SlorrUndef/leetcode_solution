@@ -1,3 +1,11 @@
+/*TIME: O(nlogn); MEMORY: O(1)
+  Algo: vector contains only elements from 1..nums.size()-1; nums.size() = N
+  so if we choose number MID from 1..N-1 in our vector MAXIMUM [MID] unique number can be less or equal
+  so if we have more than [MID] numbers less or equal MID -> duplicated number lies in interval 1..MID
+  else duplicated number lies in interval MID+1..N
+  Complexity explanation: log n time binary search. in each binary search O(n) times count how much elements 
+  less or equal
+*/
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
@@ -5,11 +13,6 @@ public:
         while(left < right){
             int mid = left + (right-left)/2;
             int k = 0;
-            //nums[mid]-1 elements must be less than nums[mid] if nums[mid] is unique
-            //if p elements in left part than nums[mid]-p-1 elements in right part of vector 
-            //if all elements unique, but we 1 element, which appears two or more times
-            //if we have k >= nums[mid] --> elements from 1..nums[mid] candidates to be
-            //duplicated
             for (int i = 0; i < nums.size(); ++i){
                 if(nums[i] <= mid) k++;
             }
