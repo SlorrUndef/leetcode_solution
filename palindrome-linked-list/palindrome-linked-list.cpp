@@ -8,6 +8,11 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
+/*
+TIME: O(n); MEMORY: O(1)
+ALGO: reverse half of the list
+*/
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
@@ -37,7 +42,7 @@ public:
             headRev = headRev->next;        
         }
         headRev = reverseList(headRev);
-        while(len != 0){
+        while(headRev){
             if(head->val != headRev->val) return false;
             head = head->next;
             headRev = headRev->next;
