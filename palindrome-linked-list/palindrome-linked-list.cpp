@@ -11,7 +11,7 @@
 
 /*
 TIME: O(n); MEMORY: O(1)
-ALGO: reverse half of the list
+ALGO: reverse half of the list (this will leave first (length/2 + 1) elements in the head list)
 */
 class Solution {
 public:
