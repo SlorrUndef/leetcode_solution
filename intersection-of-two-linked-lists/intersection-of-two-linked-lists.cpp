@@ -6,6 +6,11 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+
+/*Time : O(n+m); MEMORY: O(1)
+  Algo: calculate length of lists
+  then make them same length, then find first element when lists are equal
+*/
 class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
