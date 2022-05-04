@@ -1,24 +1,17 @@
-/*TIME: O(max(nlogn,mlogm)); MEMORY: O(n+m)
-  Algo: Sort two vectors and two pointers*/
 class Solution {
 public:
     vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
-        sort(nums1.begin(), nums1.end());
-        sort(nums2.begin(), nums2.end());
-        int i = 0, j = 0;
+        unordered_map<int, int> hash;
         vector<int> res;
-        while(i < nums1.size() && j < nums2.size()){
-            if(nums1[i] == nums2[j]){
-                res.push_back(nums1[i]);
+        for(auto &x : nums1){
+            hash[x]++;
+        }
+        for(auto &x : nums2){
+            if(hash[x] > 0){
+                hash[x]--;
+                res.push_back(x);
             }
-            else if(nums1[i] < nums2[j]){
-                j--;
-            }
-            else if(nums1[i] > nums2[j]){
-                i--;
-            }
-            i++;
-			j++;
+            
         }
         return res;
     }
