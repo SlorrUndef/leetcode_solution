@@ -1,13 +1,13 @@
 class Solution {
 public:
     bool isValidSudoku(vector<vector<char>>& board) {
-        unordered_map<string, int> hash;
+        unordered_map<string, int> hash; //hashmap keys will be row + number of row + digit in number of row
         for (int row = 0; row < 9; ++row){
             for(int col = 0; col < 9; ++col){
                if(board[row][col] != '.'){
                    string Row = "row" + to_string(row) + to_string(board[row][col]);
                    string Col = "col" + to_string(col) + to_string(board[row][col]);
-                   int box = (row/3) * 3 + (col/3);
+                   int box = (row/3) * 3 + (col/3); // number of sub-box
                    string Box = "box" + to_string(box) + to_string(board[row][col]);
                    if(!hash[Row] && !hash[Col] && !hash[Box]){
                        hash[Row] = 1;
