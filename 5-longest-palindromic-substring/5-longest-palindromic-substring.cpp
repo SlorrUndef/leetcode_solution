@@ -16,13 +16,10 @@ public:
         for (int i = n - 2; i >= 0; i--){
             for (int j = i + 1; j < n; j++){
                 if (s[i] == s[j]){
-                    
-                    //If it is of two character OR if its susbtring is palindrome.
-                    if (j - i == 1 || dp[i + 1][j - 1]){
-                        //Then it will also a palindrome substring
+                    //if it is of two character OR if its susbtring from i+1 to j-1 is palindrome.
+                    if (j - i == 1 || dp[i + 1][j - 1] == true){
                         dp[i][j] = true;
-
-                        //Check for Longest Palindrome substring
+                        //check size of substring
                         if (ans.size() < j - i + 1)
                             ans = s.substr(i, j - i + 1);
                     }
